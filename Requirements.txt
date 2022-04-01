@@ -1,0 +1,81 @@
+user details->
+
+Name
+address
+House type-> rented , own
+pan, addhar
+
+
+
+
+job details->
+
+company address
+salary 
+duration
+Existing Emi
+
+Vehicle details->
+type
+Brand
+model
+price
+
+
+
+ROI-> rate of interest 
+
+Document required->
+
+pan card 
+aadhar card
+
+
+
+
+Register
+|
+Login
+|
+Apply
+|
+more details
+|
+ROI and EMI
+|
+confirm
+|
+check Status
+
+*************************************
+
+Admin Register(from Backend)
+|
+Login
+|
+check pending applications, check all application(approved,rejected,pending)
+|
+Approve, Reject , Review
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
