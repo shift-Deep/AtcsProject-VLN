@@ -58,9 +58,25 @@ check pending applications, check all application(approved,rejected,pending)
 Approve, Reject , Review
 
 
+DataBase->
+
+User(UserId,Email,Passwrod,Name,address,state,city,MobNo)	
+Admin(Id,Name,Email,Password)
+UserLoanDetails(EmpDetails(type,sallary,adhar,Pan),ExistingEmi,BankDetails(IFSC,Name,Branch,AccountNo))
+Vehicle(VehicleId,type,chhachisNo.,regestrationNO,price,model,Brand,color)
+
+
+LoanClass->
+
+addVehicle(Vehicle v){
+Vehicle v;
+}
 
 
 
+
+
+Primary Keys->
 
 
 
