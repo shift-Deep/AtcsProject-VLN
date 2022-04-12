@@ -47,5 +47,16 @@ public class AdminServiceImpl {
 //		return adminrepo.authentication(username, password);
 		return adminrepo.findByUsernameAndPassword(username, password);
 	}
+	
+	public Admin update(String username, String password) {
+		
+		Admin a = adminrepo.findByUsername(username);
+		
+		a.setPassword(password);
+		adminrepo.save(a);
+	
+		return a;
+		
+	}
 
 }

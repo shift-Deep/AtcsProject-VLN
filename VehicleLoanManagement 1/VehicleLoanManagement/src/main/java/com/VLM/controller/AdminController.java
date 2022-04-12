@@ -7,19 +7,25 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.VLM.Entity.Admin;
 import com.VLM.Entity.LoanApplication;
+import com.VLM.Entity.User;
 import com.VLM.service.AdminServiceImpl;
+import com.VLM.service.UserServiceImpl;
 
 @RestController
 public class AdminController {
 	
 	@Autowired
 	AdminServiceImpl adminservice;
+	
+	@Autowired
+	UserServiceImpl uservice;
 	
 	@PostMapping("/admin/cred")
 	public ResponseEntity<String> cred(@RequestBody Admin admin) {
@@ -57,5 +63,15 @@ public class AdminController {
 		return adminservice.approval(appId);
 	}
 	
+	@PutMapping("/admin/update")
+	public Admin update(@RequestParam String username, @RequestParam String password) {
+		
+		return adminservice.update(username, password);
+	}
+	
+	@GetMapping("/GetAllUsers")
+	public List<User> getAllUsers(){
+		return uservice.getAllUsers();
+	}
 
 }

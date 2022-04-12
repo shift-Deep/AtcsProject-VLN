@@ -1,5 +1,7 @@
 package com.VLM.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +29,12 @@ public class LoanServiceImpl  {
 //		l.setColour(application.getColour());
 //		l.setExistingEMI(application.getExistingEMI());
 //		l.setAmount(application.getAmount());
+	}
+	public List<LoanApplication> getall() {
+		return loanrepo.findAll();
+	}
+	public List<LoanApplication> getApproved(String status){
+		return loanrepo.findByStatus(status);
 	}
 
 }
