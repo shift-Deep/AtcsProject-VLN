@@ -28,10 +28,9 @@ import com.VLM.service.LoanServiceImpl;
 	UserRepository us;
 	
 	@PostMapping("/applyloan")
-	public ResponseEntity<String> applyLoan(@RequestParam Integer userId, @Valid @RequestBody LoanApplication application) {
-		User user =us.findById(userId).get();
-		if(user.getAadhar()==null || user.getAddress() == null || user.getCity()==null || user.getEmptype()==null
-				|| user.getPan()==null || user.getPin()==null||user.getSalary()==null|| user.getState()==null) {
+	public ResponseEntity<String> applyLoan( Integer userId, @Valid  LoanApplication application) {
+		//User user =us.findById(userId).get();
+		if(us.findByUserIdAndAddressIsNotNullAndPinIsNotNullAndStateIsNotNullAndCityIsNotNullAndEmptypeIsNotNullAndSalaryIsNotNullAndAadharIsNotNullAndPanIsNotNull(userId)==null) {
 			return new ResponseEntity<>("Please enter all details in user details and try again", HttpStatus.BAD_REQUEST); 
 		}
 		 loanservice.applyLoan(application,userId);

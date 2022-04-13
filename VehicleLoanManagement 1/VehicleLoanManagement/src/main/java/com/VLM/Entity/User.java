@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
@@ -43,9 +44,10 @@ private  List<LoanApplication> loanapplication;
 	private Integer age;
 	
 	@NotNull(message= "Phone number is mandatory")
-	private Integer number;
+	private Long number;
 	
 	@NotBlank(message= "Email is mandatory")
+	@Email
 	private String email;
 	
 	@NotBlank(message= "password is mandatory")
